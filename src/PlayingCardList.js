@@ -13,6 +13,7 @@ function CardTable() {
       "https://deckofcardsapi.com/api/deck/new/draw/"
     );
     setCards(cards => [...cards, { ...response.data, id: uuid() }]);
+    console.log(cards);
   };
   return (
     <div className="PlayingCardList">
