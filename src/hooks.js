@@ -16,9 +16,10 @@ function useFlip(initialVal = true) {
 
 function useAxios(url) {
     const [cards, setCards] = useState([]);
-    const addCard = async () => {
-      const response = await axios.get(url);
-      setCards(cards => [...cards, { ...response.data, id: uuid() }]);
+    const addCard = async (param) => {
+        console.log(param);
+        const response = await axios.get(`${url}${param}`);
+        setCards(cards => [...cards, { ...response.data, id: uuid() }]);
     };
   
     // return piece of state AND a function to toggle it
